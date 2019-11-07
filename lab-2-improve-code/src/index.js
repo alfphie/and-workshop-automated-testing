@@ -1,14 +1,15 @@
 
 module.exports = function greeting(i = 'my friend') {
-  if (typeof i == 'string') {
+  if (typeof i === 'string') {
     i = [i];
   }
 
-out = 'Hello, ';
+  const out = 'Hello, ';
 
-  nStr = '';
-  for (let j in i ) { nStr = nStr + i[j] + ((parseInt(j)+2==i.length)?', and ': ((parseInt(j)+1==i.length)?'':', ')); }
+  let nStr = '';
+  for (const j in i) { nStr = nStr + i[j] + ((parseInt(j) + 2 === i.length) ? ', and ' : ((parseInt(j) + 1 === i.length) ? '' : ', ')); }
 
-    if (nStr.toUpperCase() === nStr) return "HELLO " + nStr +  '!'
+  if (nStr.toUpperCase() === nStr) return `HELLO ${nStr}!`;
 
-  return "Hello, " + nStr +  '.'}
+  return `Hello, ${nStr}.`;
+};
